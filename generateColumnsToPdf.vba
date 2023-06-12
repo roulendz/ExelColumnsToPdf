@@ -54,6 +54,12 @@ Sub GenerateBusinessCards()
     pdfName = "BusinessCards.pdf"
     pdfPath = "C:\Users\rolan\Documents\" & pdfName 'Change folder path as needed
     
+    'Set the page margins to 1cm
+    ActiveSheet.PageSetup.LeftMargin = Application.CentimetersToPoints(1)
+    ActiveSheet.PageSetup.RightMargin = Application.CentimetersToPoints(1)
+    ActiveSheet.PageSetup.TopMargin = Application.CentimetersToPoints(1)
+    ActiveSheet.PageSetup.BottomMargin = Application.CentimetersToPoints(1)
+    
     'Export the sheet as a pdf file
     ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, Filename:=pdfPath, Quality:=xlQualityStandard
     
@@ -66,5 +72,4 @@ Sub GenerateBusinessCards()
     MsgBox "Business cards have been generated and saved as one pdf file in the specified folder.", vbInformation
     
 End Sub
-
 
