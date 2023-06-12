@@ -54,11 +54,11 @@ Sub GenerateBusinessCards()
     pdfName = "BusinessCards.pdf"
     pdfPath = "C:\Users\rolan\Documents\" & pdfName 'Change folder path as needed
     
-    'Set the page margins to 1cm
-    ActiveSheet.PageSetup.LeftMargin = Application.CentimetersToPoints(1)
-    ActiveSheet.PageSetup.RightMargin = Application.CentimetersToPoints(1)
-    ActiveSheet.PageSetup.TopMargin = Application.CentimetersToPoints(1)
-    ActiveSheet.PageSetup.BottomMargin = Application.CentimetersToPoints(1)
+    'Set the page margins to 5mm (14.17 points)
+    ActiveSheet.PageSetup.LeftMargin = 14.17
+    ActiveSheet.PageSetup.RightMargin = 14.17
+    ActiveSheet.PageSetup.TopMargin = 14.17
+    ActiveSheet.PageSetup.BottomMargin = 14.17
     
     'Export the sheet as a pdf file
     ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, Filename:=pdfPath, Quality:=xlQualityStandard
