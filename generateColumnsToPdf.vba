@@ -23,9 +23,9 @@ Sub GenerateBusinessCards()
     'Add a new sheet for the business cards
     Sheets.Add After:=Sheets(Sheets.Count)
     
-    'Set the column width and row height to fit the card size
-    Columns("A:Z").ColumnWidth = 10
-    Rows("1:100").RowHeight = 50
+    'Set the column width and row height to fit the card size (40mm x 18mm)
+    Columns("A:Z").ColumnWidth = 113.39 / 5.71 '40mm in points divided by conversion factor
+    Rows("1:100").RowHeight = 45.35 '18mm in points
     
     'Loop through each cell in the range
     For i = 1 To rng.Count
