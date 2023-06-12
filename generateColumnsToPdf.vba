@@ -60,6 +60,9 @@ Sub GenerateBusinessCards()
     ActiveSheet.PageSetup.TopMargin = 14.17
     ActiveSheet.PageSetup.BottomMargin = 14.17
     
+    'Set the orientation to landscape
+    ActiveSheet.PageSetup.Orientation = xlLandscape
+    
     'Export the sheet as a pdf file
     ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, Filename:=pdfPath, Quality:=xlQualityStandard
     
