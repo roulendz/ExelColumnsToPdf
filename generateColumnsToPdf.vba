@@ -24,8 +24,9 @@ Sub GenerateBusinessCards()
     Sheets.Add After:=Sheets(Sheets.Count)
     
     'Set the column width and row height to fit the card size (40mm x 18mm)
-    Columns("A:Z").ColumnWidth = 113.39 / 5.71 '40mm in points divided by conversion factor
-    Rows("1:100").RowHeight = 45.35 '18mm in points
+    Columns("A:Z").ColumnWidth = 93.7 / 5.71  '33mm in points divided by conversion factor
+    Rows("1:100").RowHeight = 38.19 '17mm in points
+
     
     'Loop through each cell in the range
     For i = 1 To rng.Count
@@ -51,17 +52,14 @@ Sub GenerateBusinessCards()
     Next i
     
     'Set the pdf file name and path
-    pdfName = "BusinessCards.pdf"
-    pdfPath = "C:\Users\rolan\Documents\" & pdfName 'Change folder path as needed
+    pdfName = "Kodi - " & ActiveSheet.Name & ".pdf"
+    pdfPath = "C:\Users\rolan\Downloads\" & pdfName 'Change folder path as needed
     
     'Set the page margins to 5mm (14.17 points)
     ActiveSheet.PageSetup.LeftMargin = 14.17
     ActiveSheet.PageSetup.RightMargin = 14.17
     ActiveSheet.PageSetup.TopMargin = 14.17
     ActiveSheet.PageSetup.BottomMargin = 14.17
-    
-    'Set the orientation to landscape
-    ActiveSheet.PageSetup.Orientation = xlLandscape
     
     'Export the sheet as a pdf file
     ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, Filename:=pdfPath, Quality:=xlQualityStandard
@@ -75,4 +73,5 @@ Sub GenerateBusinessCards()
     MsgBox "Business cards have been generated and saved as one pdf file in the specified folder.", vbInformation
     
 End Sub
+
 
